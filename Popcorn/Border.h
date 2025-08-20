@@ -2,14 +2,15 @@
 
 #include "Ball.h"
 
-enum class EGate_State :unsigned char
+//------------------------------------------------------------------------------------------------------------
+enum class EGate_State: unsigned char
 {
 	Closed,
 	Short_Open,
 	Long_Open
 };
 //------------------------------------------------------------------------------------------------------------
-enum class EGate_Transformation : unsigned char
+enum class EGate_Transformation: unsigned char
 {
 	Unknown,
 
@@ -30,30 +31,34 @@ public:
 
 	void Open_Gate(bool short_open);
 	bool Is_Opened();
+	void Get_Y_Size(int &gate_top_y, int &gate_low_y);
+
 private:
-	bool Act_For_Short_Open();
-	bool Act_For_Long_Open(bool &correct_pos);
+	bool Act_For_Open(bool short_open, bool &correct_pos);
 	void Draw_Cup(HDC hdc, bool top_cup);
 	void Draw_Edges(HDC hdc);
+	void Draw_Short_Opening_Edges(HDC hdc);
+	void Draw_Long_Opening_Edges(HDC hdc);
 	void Draw_One_Edge(HDC hdc, int edge_y_offset, bool long_edge);
+	void Draw_Red_Edge(HDC hdc, int edge_y_offset, bool long_edge, bool has_highlight);
+	void Draw_Charge(HDC hdc);
 	void Redraw_Gate();
 
 	EGate_State Gate_State;
 	EGate_Transformation Gate_Transformation;
-
-	int X_Pos, Y_Pos;
+	int X_Pos;
+	double Y_Pos, Origin_Y_Pos;
 	int Edges_Count;
 	int Gate_Close_Tick;
 	double Gap_Height;
 	RECT Gate_Rect;
 
-	static const double Max_Gap_Short_Height;
-	static const double Gap_Height_Short_Step;
-	static const double Max_Gap_Long_Height;
-	static const double Gap_Height_Long_Step;
+	static const double Max_Gap_Short_Height, Gap_Height_Short_Step;
+	static const double Max_Gap_Long_Height, Gap_Height_Long_Step;
 	static const int Width = 6;
 	static const int Height = 19;
-	static const int Short_Opening_Timeout = AsConfig::FPS;
+	static const int Short_Opening_Timeout = AsConfig::FPS;  // 1 секунда
+	static const int Long_Opening_Timeout = AsConfig::FPS * 3;  // 3 секунды
 };
 //------------------------------------------------------------------------------------------------------------
 class AsBorder: public AHit_Checker, public AGraphics_Object
@@ -72,6 +77,7 @@ public:
 	void Redraw_Floor();
 	void Open_Gate(int gate_index, bool short_open);
 	bool Is_Gate_Opened(int gate_index);
+
 private:
 	void Draw_Element(HDC hdc, RECT &paint_area, int x, int y, bool top_border);
 	void Draw_Floor(HDC hdc, RECT &paint_area);
