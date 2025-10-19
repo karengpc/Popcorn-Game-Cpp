@@ -1,0 +1,65 @@
+# Build папки
+Debug/
+Release/
+x64/
+x86/
+bin/
+obj/
+ipch/
+
+# Visual Studio временные файлы
+*.user
+*.suo
+*.userosscache
+*.sdf
+*.db
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.ncb
+*.log
+*.tlog
+*.lastbuildstate
+*.pch
+*.pdb
+*.ilk
+*.idb
+*.cache
+*.ipdb
+*.iobj
+
+# Исполняемые файлы
+*.exe
+*.dll
+*.lib
+*.exp
+*.apk
+*.app
+*.out
+
+# Visual Studio Code workspace
+.vscode/
+.vs/
+
+# Пакеты NuGet и прочие
+*.nupkg
+*.nuspec
+packages/
+*.tmp
+
+# Системные файлы Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Резервные и временные
+*.bak
+*.old
+*.orig
+
+# Logs
+*.log
+
+# Символические ссылки и ярлыки
+*.lnk
