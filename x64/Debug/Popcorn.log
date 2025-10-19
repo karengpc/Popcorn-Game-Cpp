@@ -1,2 +1,43 @@
-﻿  Border.cpp
-  Popcorn.vcxproj -> C:\WORK\Popcorn_project\Popcorn2\Popcorn\x64\Debug\Popcorn.exe
+﻿  Falling_Letter.cpp
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Falling_Letter.cpp(125,33): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Falling_Letter.cpp(125,33): error C3861: 'Rand': identifier not found
+  Gate.cpp
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Gate.cpp(378,25): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Gate.cpp(378,25): error C3861: 'Rand': identifier not found
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Gate.cpp(379,21): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Gate.cpp(379,21): error C3861: 'Rand': identifier not found
+  Level.cpp
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(368,16): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(368,16): error C3861: 'Rand': identifier not found
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(382,22): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(382,22): error C3861: 'Rand': identifier not found
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(382,26): error C2050: switch expression not integral
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(579,25): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Level.cpp(579,25): error C3861: 'Rand': identifier not found
+  Platform.cpp
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Platform.cpp(564,24): error C2039: 'Rand': is not a member of 'AsConfig'
+      C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Config.h(6,7):
+      see declaration of 'AsConfig'
+  
+C:\WORK\Popcorn_project\Popcorn2\Popcorn\Popcorn\Platform.cpp(564,24): error C3861: 'Rand': identifier not found
+  Platform_Laser.cpp
+  Platform_State.cpp
+  Generating Code...

@@ -7,13 +7,13 @@
 #include "Platform_Laser.h"
 
 //------------------------------------------------------------------------------------------------------------
-class AsPlatform: public AHit_Checker, public AMover, public AGraphics_Object
+class AsPlatform: public AHit_Checker, public AGame_Object
 {
 public:
 	~AsPlatform();
 	AsPlatform();
 
-	virtual bool Check_Hit(double next_x_pos, double next_y_pos, ABall *ball);
+	virtual bool Check_Hit(double next_x_pos, double next_y_pos, ABall_Object *ball);
 
 	virtual void Begin_Movement();
 	virtual void Finish_Movement();
@@ -37,6 +37,7 @@ public:
 	double Get_Middle_Pos();
 
 	double X_Pos;
+	static AHit_Checker_List Hit_Checker_List;
 
 private:
 	bool Set_Transformation_State(EPlatform_State new_state, EPlatform_Transformation &transformation_state);
@@ -46,7 +47,6 @@ private:
 	void Draw_Meltdown_State(HDC hdc, RECT &paint_area);
 	void Draw_Rolling_State(HDC hdc, RECT &paint_area);
 	void Draw_Roll_In_State(HDC hdc, RECT &paint_area);
-	bool Reflect_On_Circle(double next_x_pos, double next_y_pos, double platform_ball_x_offset, ABall *ball);
 	bool Get_Platform_Image_Stroke_Color(int x, int y, const AColor **color, int &stroke_len);
 	void Get_Normal_Platform_Image(HDC hdc);
 	double Get_Current_Width();

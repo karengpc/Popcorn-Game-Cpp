@@ -100,9 +100,7 @@ void AsPlatform_Expanding::Draw_State(HDC hdc, double x)
 
 
 	// 3. –исуем среднюю часть
-	Inner_Color->Select(hdc);
-
-	Rectangle(hdc, inner_rect.left, inner_rect.top, inner_rect.right - 1, inner_rect.bottom - 1);
+	AsTools::Rect(hdc, inner_rect, *Inner_Color);
 }
 //------------------------------------------------------------------------------------------------------------
 void AsPlatform_Expanding::Draw_Circle_Highlight(HDC hdc, int x, int y)
@@ -141,8 +139,7 @@ void AsPlatform_Expanding::Draw_Expanding_Platform_Ball(HDC hdc, double x, bool 
 	rect.right = rect.left + AsConfig::Platform_Circle_Size * scale;
 	rect.bottom = (y + AsConfig::Platform_Circle_Size) * scale;
 
-	Circle_Color->Select(hdc);
-	Ellipse(hdc, rect.left, rect.top, rect.right - 1, rect.bottom - 1);
+	AsTools::Ellipse(hdc, rect, *Circle_Color);
 
 	// 1.2. ѕереходник на ферму
 	if (is_left)
@@ -179,8 +176,7 @@ void AsPlatform_Expanding::Draw_Expanding_Platform_Ball(HDC hdc, double x, bool 
 	}
 
 	// 1.4.1. ƒырка в шарике под дугой
-	AsConfig::BG_Color.Select(hdc);
-	Ellipse(hdc, arc_rect.left, arc_rect.top, arc_rect.right - 1, arc_rect.bottom - 1);
+	AsTools::Ellipse(hdc, arc_rect, AsConfig::BG_Color);
 
 	// 1.4.2. —ама дуга
 	Truss_Color->Select(hdc);

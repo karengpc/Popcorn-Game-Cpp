@@ -11,7 +11,7 @@ enum class ELaser_Beam_State: unsigned char
 	Cleanup
 };
 //------------------------------------------------------------------------------------------------------------
-class ALaser_Beam: public AMover, public AGraphics_Object
+class ALaser_Beam: public AGame_Object
 {
 public:
 	ALaser_Beam();
@@ -31,8 +31,9 @@ public:
 
 	static AHit_Checker_List Hit_Checker_List;
 
-private:
 	void Disable();
+
+private:
 	void Redraw_Beam();
 
 	ELaser_Beam_State Laser_Beam_State;

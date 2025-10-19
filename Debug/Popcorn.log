@@ -4,9 +4,19 @@
   Border.cpp
   Config.cpp
   Engine.cpp
+  Explosive_Ball.cpp
   Falling_Letter.cpp
+  Gate.cpp
+  Laser_Beam.cpp
+  Laser_Beam_Set.cpp
   Level.cpp
   Main.cpp
+  Monster.cpp
+  Monster_Set.cpp
   Platform.cpp
+  Platform_Expanding.cpp
+  Platform_Glue.cpp
+  Platform_Laser.cpp
+  Platform_State.cpp
   Generating Code...
   Popcorn.vcxproj -> C:\WORK\Popcorn_project\Popcorn2\Popcorn\Debug\Popcorn.exe

@@ -6,28 +6,31 @@
 #include <math.h>
 
 //------------------------------------------------------------------------------------------------------------
-class ABall;
-class AHit_Checker
+enum class EBall_State: unsigned char
 {
-public:
-	virtual bool Check_Hit(double next_x_pos, double next_y_pos, ABall *ball) = 0;
-	virtual bool Check_Hit(double next_x_pos, double next_y_pos);
+	Disabled,  // Отключён (не рисуется, не перемещается и не взаимодействует)
 
-	bool Hit_Circle_On_Line(double y, double next_x_pos, double left_x, double right_x, double radius, double &x);
+	Normal,
+	Lost,
+	On_Platform,
+	On_Parachute,
+	Off_Parachute,
+	Teleporting
 };
 //------------------------------------------------------------------------------------------------------------
-class AHit_Checker_List
+class ABall_Object
 {
 public:
-	AHit_Checker_List();
-
-	bool Add_Hit_Checker(AHit_Checker *hit_checker);
-	bool Check_Hit(double x_pos, double y_pos, ABall *ball);
-	bool Check_Hit(double x_pos, double y_pos);
-
-private:
-	int Hit_Checkers_Count;
-	AHit_Checker *Hit_Checkers[3];
+	virtual double Get_Direction() = 0;
+	virtual void Set_Direction(double new_direction) = 0;
+	virtual EBall_State Get_State() = 0;
+	virtual void Set_State(EBall_State new_state, double x_pos = 0, double y_pos = 0) = 0;
+	virtual void Reflect(bool from_horizontal) = 0;
+	virtual void Draw_Teleporting(HDC hdc, int step) = 0;
+	virtual void Set_On_Parachute(int brick_x, int brick_y) = 0;
+	virtual void Get_Center(double &x_pos, double &y_pos) = 0;
+	virtual bool Is_Moving_Up() = 0;
+	virtual bool Is_Moving_Left() = 0;
 };
 //------------------------------------------------------------------------------------------------------------
 class AMover
@@ -71,5 +74,26 @@ public:
 private:
 	HPEN Pen;
 	HBRUSH Brush;
+};
+//------------------------------------------------------------------------------------------------------------
+class AGame_Object: public AMover, public AGraphics_Object
+{
+};
+//------------------------------------------------------------------------------------------------------------
+class AGame_Objects_Set: public AGame_Object
+{
+public:
+	virtual void Begin_Movement();
+	virtual void Finish_Movement();
+	virtual void Advance(double max_speed);
+	virtual double Get_Speed();
+
+	virtual void Act();
+	virtual void Clear(HDC hdc, RECT &paint_area);
+	virtual void Draw(HDC hdc, RECT &paint_area);
+	virtual bool Is_Finished();
+
+protected:
+	virtual bool Get_Next_Game_Object(int &index, AGame_Object **game_obj) = 0;
 };
 //------------------------------------------------------------------------------------------------------------

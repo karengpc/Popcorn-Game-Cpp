@@ -3,30 +3,30 @@
 #include "Active_Brick.h"
 
 //------------------------------------------------------------------------------------------------------------
-enum ELetter_Type
+enum class ELetter_Type: unsigned char
 {
-	ELT_O,  // "Отмена"
-	ELT_I,  // "Инверсия"
-	ELT_C,  // "Скорость"
-	ELT_M,  // "Монстры"
-	ELT_G,  // "Жизнь"
-	ELT_K,  // "Клей"
-	ELT_W,  // "Шире"
+	O,  // "Отмена"
+	I,  // "Инверсия"
+	C,  // "Скорость"
+	M,  // "Монстры"
+	G,  // "Жизнь"
+	K,  // "Клей"
+	W,  // "Шире"
 
-	ELT_T,  // "Три"
-	ELT_L,  // "Лазер"
-	ELT_P,  // "Пол"
+	T,  // "Три"
+	L,  // "Лазер"
+	P,  // "Пол"
 
-	ELT_Plus,  // Переход на следующий уровень
+	Plus,  // Переход на следующий уровень
 
-	ELT_Max
+	Max
 };
 //------------------------------------------------------------------------------------------------------------
-enum EFalling_Letter_State
+enum class EFalling_Letter_State: unsigned char
 {
-	EFLS_Normal,
-	EFLS_Finalizing,  // Начинаем удалять объект
-	EFLS_Finished  // Когда объект можно удалять
+	Normal,
+	Finalizing,  // Начинаем удалять объект
+	Finished  // Когда объект можно удалять
 };
 //------------------------------------------------------------------------------------------------------------
 class AFalling_Letter: public AGraphics_Object
@@ -67,6 +67,6 @@ private:
 	static const int Brick_Half_Height = AsConfig::Brick_Height * AsConfig::Global_Scale / 2;
 
 	static int All_Letters_Popularity;
-	static int Letters_Popularity[ELT_Max];  // "Вес" каждой буквы
+	static int Letters_Popularity[ (int)ELetter_Type::Max];  // "Вес" каждой буквы
 };
 //------------------------------------------------------------------------------------------------------------

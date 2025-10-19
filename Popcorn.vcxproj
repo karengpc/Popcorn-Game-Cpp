@@ -158,12 +158,16 @@
     <ClInclude Include="Border.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Explosive_Ball.h" />
     <ClInclude Include="Falling_Letter.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Gate.h" />
     <ClInclude Include="Laser_Beam.h" />
     <ClInclude Include="Laser_Beam_Set.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="Monster_Set.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Platform_Expanding.h" />
     <ClInclude Include="Platform_Glue.h" />
@@ -171,7 +175,7 @@
     <ClInclude Include="Platform_State.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Tools.h" />
+    <ClInclude Include="Common.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Active_Brick.cpp" />
@@ -180,17 +184,21 @@
     <ClCompile Include="Border.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Explosive_Ball.cpp" />
     <ClCompile Include="Falling_Letter.cpp" />
+    <ClCompile Include="Gate.cpp" />
     <ClCompile Include="Laser_Beam.cpp" />
     <ClCompile Include="Laser_Beam_Set.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="Monster_Set.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Platform_Expanding.cpp" />
     <ClCompile Include="Platform_Glue.cpp" />
     <ClCompile Include="Platform_Laser.cpp" />
     <ClCompile Include="Platform_State.cpp" />
-    <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="Common.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Popcorn.rc" />

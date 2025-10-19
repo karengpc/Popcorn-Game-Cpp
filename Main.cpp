@@ -164,13 +164,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		switch (wParam)
 		{
 		case VK_LEFT:
-			return Engine.On_Key(EKT_Left, true);
+			return Engine.On_Key(EKey_Type::Left, true);
 
 		case VK_RIGHT:
-			return Engine.On_Key(EKT_Right, true);
+			return Engine.On_Key(EKey_Type::Right, true);
 
 		case VK_SPACE:
-			return Engine.On_Key(EKT_Space, true);
+			return Engine.On_Key(EKey_Type::Space, true);
 		}
 		break;
 
@@ -179,13 +179,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		switch (wParam)
 		{
 		case VK_LEFT:
-			return Engine.On_Key(EKT_Left, false);
+			return Engine.On_Key(EKey_Type::Left, false);
 
 		case VK_RIGHT:
-			return Engine.On_Key(EKT_Right, false);
+			return Engine.On_Key(EKey_Type::Right, false);
 
 		case VK_SPACE:
-			return Engine.On_Key(EKT_Space, false);
+			return Engine.On_Key(EKey_Type::Space, false);
 		}
 		break;
 
@@ -314,10 +314,10 @@ V 2. Выбивание падающей буквы
 V 3. Перехват падающей буквы
 4. Для каждой буквы - свои действия
 
-Гейты
-1. Вывод гейтов
-2. Анимация открытия/закрытия гейтов
-3. Состояния гейтов (закрыт, открывается, закрывается)
+V Гейты
+V 1. Вывод гейтов
+V 2. Анимация открытия/закрытия гейтов
+V 3. Состояния гейтов (закрыт, открывается, закрывается)
 
 
 Монстры

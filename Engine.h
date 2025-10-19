@@ -6,22 +6,23 @@
 #include "Level.h"
 #include "Platform.h"
 #include "Ball_Set.h"
+#include "Monster_Set.h"
 
 //------------------------------------------------------------------------------------------------------------
-enum EKey_Type
+enum class EKey_Type: unsigned char
 {
-	EKT_Left,
-	EKT_Right,
-	EKT_Space
+	Left,
+	Right,
+	Space
 };
 //------------------------------------------------------------------------------------------------------------
-enum EGame_State
+enum class EGame_State: unsigned char
 {
-	EGS_Test_Ball,
+	Test_Ball,
 
-	EGS_Play_Level,
-	EGS_Lost_Ball,
-	EGS_Restart_Level
+	Play_Level,
+	Lost_Ball,
+	Restart_Level
 };
 //------------------------------------------------------------------------------------------------------------
 const int Timer_ID = WM_USER + 1;
@@ -42,6 +43,7 @@ private:
 	void Advance_Movers();
 	void Act();
 	void On_Falling_Letter(AFalling_Letter *falling_letter);
+	void Add_Next_Module(int &index, AGame_Object *game_obj);
 
 	EGame_State Game_State;
 	double Rest_Distance;
@@ -52,8 +54,11 @@ private:
 	AsBorder Border;
 	AsBall_Set Ball_Set;
 	AsLaser_Beam_Set Laser_Beam_Set;
+	AsMonster_Set Monster_Set;
 
-	AMover *Movers[AsConfig::Max_Movers_Count];  // UNO; Движущиеся в данный момент объекты
-	AGraphics_Object *Modules[AsConfig::Max_Modules_Count];  // UNO; Главные графические объекты (модули) игры
+	//AMover *Movers[AsConfig::Max_Movers_Count];  // UNO; Движущиеся в данный момент объекты
+	//AGraphics_Object *Modules[AsConfig::Max_Modules_Count];  // UNO; Главные графические объекты (модули) игры
+
+	AGame_Object *Modules[AsConfig::Max_Modules_Count];  // UNO; Главные графические объекты (модули) игры
 };
 //------------------------------------------------------------------------------------------------------------

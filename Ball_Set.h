@@ -3,18 +3,10 @@
 #include "Ball.h"
 
 //------------------------------------------------------------------------------------------------------------
-class AsBall_Set: public AMover, public AGraphics_Object
+class AsBall_Set: public AGame_Objects_Set
 {
 public:
-	virtual void Begin_Movement();
-	virtual void Finish_Movement();
-	virtual void Advance(double max_speed);
-	virtual double Get_Speed();
-
 	virtual void Act();
-	virtual void Clear(HDC hdc, RECT &paint_area);
-	virtual void Draw(HDC hdc, RECT &paint_area);
-	virtual bool Is_Finished();
 
 	void Release_From_Platform(double platform_x_pos);
 	bool Release_Next_Ball();
@@ -29,6 +21,8 @@ public:
 	void On_Platform_Advance(double direction, double platform_speed, double max_speed);
 
 private:
+	virtual bool Get_Next_Game_Object(int &index, AGame_Object **game_obj);
+
 	ABall Balls[AsConfig::Max_Balls_Count];
 };
 //------------------------------------------------------------------------------------------------------------
